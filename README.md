@@ -1,6 +1,11 @@
 # Two-Tier-Backend-with-Caching-using-AWS
 Implement a Two-Tier Backend with API Gateway, Fargate, Lambda, RDS, DynamoDB, and IAM. Enhance performance with integrated caching. Scalable, efficient, and cost-effective AWS architecture for optimized data retrieval.
 
+Team Members:
+  - Albert Ravidoss R
+  - Karthi
+  - Sriram
+
 This project idea consists of building Create, Read, Update, and Delete APIs that integrate
 with a scalable database, and optionally, a caching layer to improve performance. You’ll use
 the API Gateway service to set up a resource and routes that map to your compute tier.
