@@ -1,0 +1,6 @@
+code editor -> Vscode
+Prerequisite -> Python ( npm ) 
+
+commands
+	npm install -g aws-cdk
+	  

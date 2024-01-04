@@ -1,0 +1,91 @@
+error occured
+
+1  npm : The term 'npm' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ npm
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (npm:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+ solution:
+	The error message indicates that the npm command is not recognized, which suggests that Node.js and npm might not be installed on your system or their paths are not set correctly.
+
+To resolve this issue, you can follow these steps:
+
+Install Node.js and npm:
+
+Visit the official Node.js website.
+Download the latest LTS version (recommended for most users).
+Follow the installation instructions for your operating system.
+Verify Installation:
+
+Open a new command prompt or terminal window.
+Type the following commands to verify that Node.js and npm are installed:
+bash
+Copy code
+node -v
+npm -v
+These commands should print the installed versions of Node.js and npm, respectively.
+Restart the Command Prompt or Terminal:
+
+After installing Node.js and npm, restart your command prompt or terminal to ensure that the updated paths are recognized.
+Path Configuration (Windows):
+
+On Windows, make sure that the Node.js and npm installation directories are added to your system's PATH environment variable.
+The default installation paths are often:
+Node.js: C:\Program Files\nodejs
+npm: C:\Users\<your_username>\AppData\Roaming\npm
+Path Configuration (Unix-based Systems - Linux/macOS):
+
+On Linux/macOS, your system may require updating the PATH in the shell profile file (e.g., .bashrc, .zshrc, or .profile).
+Example for the bash shell:
+bash
+Copy code
+export PATH=$PATH:/usr/local/bin/node
+export PATH=$PATH:/usr/local/bin/npm
+Verify Again:
+
+After making changes, open a new command prompt or terminal and run the node -v and npm -v commands to ensure that the issue is resolved.
+
+
+2)  cdk : File C:\Users\ravid\AppData\Roaming\npm\cdk.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ cdk
++ ~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+solution: 
+	The error you're encountering is due to the PowerShell script execution policy on your system. PowerShell has an "execution policy" that determines whether scripts can be run on your system. By default, this policy may be set to a restricted mode, preventing the execution of scripts.
+
+To resolve this issue, you can change the execution policy. Here are the steps:
+
+Open PowerShell as an Administrator:
+
+Right-click on the PowerShell icon or the PowerShell shortcut and choose "Run as Administrator."
+Check the Current Execution Policy:
+
+Run the following command to check the current execution policy:
+powershell
+Copy code
+Get-ExecutionPolicy
+If it returns "Restricted," you need to change it.
+Change Execution Policy:
+
+To change the execution policy, run the following command:
+
+powershell
+Copy code
+Set-ExecutionPolicy RemoteSigned
+This command allows locally-created scripts to run.
+
+If you encounter a permission error, you might need to run PowerShell with elevated privileges (Run as Administrator).
+
+Confirm the Change:
+
+Run the Get-ExecutionPolicy command again to confirm that the execution policy has been changed.
+Run Your Command Again:
+
+After changing the execution policy, try running your cdk command again.
+Note: Changing the execution policy can have security implications, so be aware of the risks. The "RemoteSigned" policy is a reasonable compromise for local development.
+
